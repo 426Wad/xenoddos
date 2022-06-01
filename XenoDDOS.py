@@ -33,11 +33,10 @@ Created by: Genesis""")
             while True:
                 choice = input("Enter your choice: ")
                 if choice == "1":
-                    print("Invalid input")
                     host_ip = input("Enter the host ip: ")
                     host_port = input("Enter the host port: ")
                     net_interface = input("Enter the network interface: ")
-                    os.system('bonesi -i /usr/share/bonesi/50k-bots -p tcp -r 0 -d '+net_interface+' -b /root/usr/share/bonesi/browserlist.txt ' + host_ip + ':' + host_port)
+                    os.system('bonesi -i /usr/share/bonesi/50k-bots -p tcp -r 0 -d '+net_interface+' -b /usr/share/bonesi/browserlist.txt ' + host_ip + ':' + host_port)
                     time.sleep(5)
                     os.system('clear')
                 if choice == "2":
